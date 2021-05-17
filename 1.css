@@ -1,50 +1,200 @@
-:root {
-  --color-1: rgb(242, 75, 214);
-  --color-1-b: rgb(75, 242, 181, 0);
-  --color-1-a: rgba(242, 75, 220, 0.5);
-  --color-2: #bf26a5;
-  --color-3: #3e4855;
-  --color-3-a: rgba(52, 61, 71, 0.97);
-  --color-4: rgb(242, 75, 186);
-  --color-5: #d9d3c1;
-  --light-persik: rgb(242, 196, 155);
-  --light-persik-a: rgba(255, 255, 255);
-}
-.tab {
-  display: flex;
-  position: absolute;
-  top: 2.4rem;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  background-color: var(--color-3);
-  box-shadow: 0px 0px 30px#b14da3;
-  border-radius: 15px;
-  max-width: 900px;
-  width: 90%;
-  z-index: 20;
-  transition: all 0.5s;
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: Tahoma;
+    outline: none;
+  }
+  html {
+    font-size: 16px;
+  }
+  body {
+    font-size: 30px;
+  }
+  ul, li {
+    list-style: none;
+  }
+
+  .wrapper {
+    width: 1000px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    background: greenyellow;
+  }
+
+
+
+  .header__title {
+    font-size: 3.8rem;
+    margin: 40px 0 25px 0;
+    text-align: center;
+  }
+
+  .header__toolbar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-wrapper {
+    padding: 40px 20px;
+    background-color: rgb(192, 248, 236);
+  }
+
+  .todo-list__item {
+    position: relative;
+    padding: 20px 15px;
+    font-size: 1.5rem;
+    background-color:rgb(192, 248, 236);
+  }
+  .todo-list__item:hover {
+    background-color: #d8d7d8;
+  }
+  .todo-list__item--done {
+    text-decoration: line-through;
+    background: rgb(146, 166, 187);
+    padding: 20px 15px;
+    position: relative;
 }
 
-.aboutTitle {
-  font-family: "Dosis", sans-serif;
-  color: var(--color-5);
-  font-size: 2.5em;
-  font-weight: bold;
-  padding-bottom: 1rem;
+  .todo-list__delete-btn {
+    position: absolute;        
+    min-width: 50px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px 35px;
+    background: transparent;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+  }
+  .todo-list__delete-btn:hover,
+      .todo-list__delete-btn:focus {
+        background: #555355;
+        color: white;
+  }
+  .todo-list__delete-btn:active {
+      box-shadow: 0 0 5px red;
+  }
+  .todo-list__delete-btn--disabled {
+      cursor: not-allowed;
+  }
+  .todo-list__delete-btn--disabled:hover,
+  .todo-list__delete-btn--disabled:focus {
+      background: transparent;
+      color: rgba(16, 16, 16, 0.3);
+  }
+
+  .header__task {
+      flex-basis: 65%;
+  }
+
+  .errorMessage {
+    margin-top: 4px;
+    color: red;
+    font-size: 16px;
+    text-indent: 14px;
+  }
+
+  .header__task__action {
+      position: relative;
+  }
+
+  .header__task__text {
+      width: calc(100% - 30px);
+    padding: 15px;
+    font-size: 1.5rem;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .header__task__text:focus {
+      box-shadow: 0 0 5px rgba(5, 5, 5, 0.5);
+  }
+
+  .header__task__text__error:focus {
+    box-shadow: 0 0 5px rgb(2, 253, 56);
 }
 
-.aboutText {
-  font-family: "Muli", sans-serif;
-  color: var(--color-1);
-  font-size: 2.5em;
-}
+  .header__task__button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    font-size: 1.5rem;
+    min-width: 150px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .header__task__button:hover,
+      .header__task__button:focus {
+        background-color: #555355;
+        box-shadow: 1px 0 5px rgba(0, 0, 0, 0.5);
+        outline: none;
+  }
+  .header__task__button:active {
+      border: 1px solid rgba(175, 186, 201, 0.932);
+  }
 
-.about {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  .header__task__random__button {
+    position: absolute;
+    top: 10;
+    right: 15;
+    bottom: 10;
+  font-size: 1.5rem;
+  min-width: 150px;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
 }
+.header__task__random__button:hover,
+      .header__task__random__button:focus {
+        background-color: #5f1a5f;
+        box-shadow: 1px 0 5px rgba(0, 0, 0, 0.5);
+        outline: none;
+        
+
+
+  @media screen and (max-width: 1200px) {
+    .wrapper {
+      width: 70%;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+      html {
+          font-size: 14px;
+      }
+    .wrapper {
+        width: 100%;
+        border-right: 0;
+        border-left: 0;
+    }
+    .header__task {
+        flex-basis: 75%;
+    }
+  }
+  @media screen and (max-width: 576px) {
+      html {
+          font-size: 11px;
+      }
+      .header__title {
+          margin: 30px 0 20px;
+      }
+      .content-wrapper {
+          padding: 0;
+      }
+    .header__task {
+        flex-basis: 100%;
+    }
+    .header__task__text,
+    .header__task__button {
+        border-radius: 0;
+    }
+    .header__task__button {
+        min-width: 100px;
+    }
+    .todo-list__delete-btn {
+        border-radius: 0;
+    }
+
+  }}

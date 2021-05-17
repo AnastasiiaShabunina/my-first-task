@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="1.css">
-    <title>Техническое задание</title>
-</head>
-<section class="tab">
-
-        <div class="about">
-            <h2 class="aboutTitle">Вечная лента</h2>
-            <p  class="aboutText">Мой вариант загрузки контента.</p></div>
-
-            
-<body>  
-    <div id = 'photos'>
-        <p id = 'text'></p>
-    </div>
-    <div id="infinite-scroll">
-        <div>
-           
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel='stylesheet' href = '1.css' type='text/css'/> <title>Final 1/2/3</title>
     
-    <script src = 1.js></script>
-</body>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <h1 class="header__title">Task Manager</h1>
+        <div class="header__toolbar">
+          <div class="header__task">
+      		<div class="header__task__action">
+      			<input id='newTask' class="header__task__text taskText" type="text" placeholder="New task..." />
+            <input id='addButton' type="button" class="header__task__button add" value="Add" />
+            <input id = 'addRandomBtn' class=" header__task__random__button" type = 'button' value = 'Add random'/>
+      		</div>
+      		<div><p class="errorMessage"></p></div> 
+          </div>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <ul id="myList" class="todo-list">
+        </ul>
+      </div> 
+    </div>
+    <p id = 'countOfTasks'></p>
+     <script src = 1.js></script>
+  </body>
 </html>
